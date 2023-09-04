@@ -1,10 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Button, View, TextInput } from 'react-native';
+
+
 
 export default function App() {
+  
+  const[text, setText] = useState('')
+
+  function buttenHandler(){
+    alert("You typed: " + text)
+    }
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <TextInput onChangeText={(txt) => setText(txt)} />
+      <button title='pressMe' onClick={buttenHandler}>Press</button>
       <StatusBar style="auto" />
     </View>
   );
