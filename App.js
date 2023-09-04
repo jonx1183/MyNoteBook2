@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, FlatList, Button, View, TextInput, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 
@@ -8,6 +10,7 @@ export default function App() {
   
   const[text, setText] = useState('')
   const[notes, setNotes] = useState([])
+  const stack = createNativeStackNavigator()
 
   function buttenHandler(){
     //alert("You typed: " + text)
