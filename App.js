@@ -7,10 +7,13 @@ import { StyleSheet, FlatList, Button, View, TextInput, Text } from 'react-nativ
 export default function App() {
   
   const[text, setText] = useState('')
-  const notes = [{key:1, name:"Jon"}, {key:2, name:"Testington"}]
+  const[notes, setNotes] = useState([])
 
   function buttenHandler(){
-    alert("You typed: " + text)
+    //alert("You typed: " + text)
+    setNotes(
+      [...notes, {key:notes.length, name:text} ]
+    )
     }
   return (
     <View style={styles.container}>
