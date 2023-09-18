@@ -1,3 +1,4 @@
+import { app } from './Firebase'
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, FlatList, Button, View, TextInput, Text } from 'react-native';
@@ -11,6 +12,8 @@ export default function App() {
   const[text, setText] = useState('')
   const[notes, setNotes] = useState([])
   const stack = createNativeStackNavigator()
+
+  alert(JSON.stringify(app, null, 4))
 
   function buttenHandler(){
     //alert("You typed: " + text)
